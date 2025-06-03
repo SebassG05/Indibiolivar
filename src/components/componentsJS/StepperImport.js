@@ -49,7 +49,7 @@ export default function HorizontalLinearStepperImport({ onSubmit }) {
 
   const fetchTables = async () => {
     try {
-      const response = await fetch('http://localhost:5003/api/tables'); // Endpoint para obtener enfermedades disponibles
+      const response = await fetch('http://localhost:5100/api/tables'); // Endpoint para obtener enfermedades disponibles
       const data = await response.json();
       setTables(data);
 
@@ -70,7 +70,7 @@ export default function HorizontalLinearStepperImport({ onSubmit }) {
     formData.append('file', file);
     formData.append('table', selectedTable);
 
-    axios.post('http://localhost:5003/api/upload', formData, {
+    axios.post('http://localhost:5100/api/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

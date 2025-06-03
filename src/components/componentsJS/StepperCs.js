@@ -53,7 +53,7 @@ export default function HorizontalLinearStepperCS({onSubmit}) {
   const handleSubmit = async () => {
       setLoading(true);
       const ref = cadastralRef.replace(/\s/g, '');
-      const apiUrl = `http://localhost:500/cadastral/${ref}`;
+      const apiUrl = `http://localhost:5100/cadastral/${ref}`;
       const queryParams = `?recintoNum=${recintoNum}`;
       try {
           const response = await fetch(`${apiUrl}${queryParams}`);

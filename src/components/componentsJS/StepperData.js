@@ -134,7 +134,7 @@ export default function HorizontalLinearStepperData({ onSubmit }) {
       }
 
       try {
-        const response = await fetch('http://localhost:500/get_spatiotemporal', {
+        const response = await fetch('http://localhost:5100/get_spatiotemporal', {
           method: 'POST',
           body: formData
         });

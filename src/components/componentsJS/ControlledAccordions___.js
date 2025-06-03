@@ -298,7 +298,7 @@ export default function ControlledAccordions({onSubmit}) {
       
       console.log(data);
       console.log("Aqi")
-      const response = await fetch('http://localhost:500/api/soil_organic_prediction', {
+      const response = await fetch('http://localhost:5100/api/soil_organic_prediction', {
          method: 'POST',
          body: data
       });
