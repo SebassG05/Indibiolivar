@@ -432,9 +432,9 @@ def vegetation_index_change_inspector():
             return srCollection
 
         def getCombinedSRcollection(startYear, endYear, startDay, endDay, aoi):
-            lt5 = getSRcollection(startYear, startYear, startDay, endDay, 'LT05', aoi)
-            le7 = getSRcollection(startYear, startYear, startDay, endDay, 'LE07', aoi)
-            lc8 = getSRcollection(startYear, startYear, startDay, endDay, 'LC08', aoi)
+            lt5 = getSRcollection(startYear, startDay, endDay, 'LT05', aoi)
+            le7 = getSRcollection(startYear, startDay, endDay, 'LE07', aoi)
+            lc8 = getSRcollection(startYear, startDay, endDay, 'LC08', aoi)
             return ee.ImageCollection(lt5.merge(le7).merge(lc8))
         
         def add_indices(image):
@@ -1448,7 +1448,7 @@ def spatiotemporal_analysis_v2():
                         monthlyPrecipitation.set('year', year).set('month', month).set('system:time_start', ee.Date.fromYMD(year, month, 1)),
                         None
                     )
-                years = ee.List.sequence(int(start[:4]), int(end[:4]))
+                years = ee.List.sequence(2001, 2021)
                 months = ee.List.sequence(1, 12)
                 monthlyPrecipList = years.map(lambda year: months.map(lambda m: calculateMonthlyPrecipitation(year, m))).flatten()
                 monthlyPrecipCollection = ee.ImageCollection.fromImages(monthlyPrecipList).filter(ee.Filter.notNull(['system:time_start']))
@@ -1696,7 +1696,7 @@ def get_spatiotemporal():
                     monthlyPrecipitation.set('year', year).set('month', month).set('system:time_start', ee.Date.fromYMD(year, month, 1)),
                     None
                 )
-            years = ee.List.sequence(int(start[:4]), int(end[:4]))
+            years = ee.List.sequence(2001, 2021)
             months = ee.List.sequence(1, 12)
             monthlyPrecipList = years.map(lambda year: months.map(lambda m: calculateMonthlyPrecipitation(year, m))).flatten()
             monthlyPrecipCollection = ee.ImageCollection.fromImages(monthlyPrecipList).filter(ee.Filter.notNull(['system:time_start']))
