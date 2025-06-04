@@ -62,13 +62,13 @@ class Register extends React.Component {
         let body = {};
 
         if (mode === 'register') {
-            url = 'http://localhost:5000/api/auth/register';
+            url = 'http://localhost:5001/api/auth/register';
             body = JSON.stringify({ username, email, password });
         } else if (mode === 'login') {
-            url = 'http://localhost:5000/api/auth/login';
+            url = 'http://localhost:5001/api/auth/login';
             body = JSON.stringify({ username, password });
         } else if (mode === 'forgotPassword') {
-            url = 'http://localhost:5000/api/auth/reset-password'; // New endpoint
+            url = 'http://localhost:5001/api/auth/reset-password'; // New endpoint
             body = JSON.stringify({ username, newPassword }); // Send username and new password
         }
 
@@ -156,7 +156,7 @@ class Register extends React.Component {
         this.setState({ isSubmitting: true });
 
         try {
-            const backendResponse = await fetch('http://localhost:5000/api/auth/google', {
+            const backendResponse = await fetch('http://localhost:5001/api/auth/google', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

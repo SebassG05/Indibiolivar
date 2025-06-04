@@ -8,7 +8,7 @@ function ParcelDropdown({ onSelect }) {
     const [selected, setSelected] = useState('');
     useEffect(() => {
         const token = localStorage.getItem('token');
-        fetch('http://localhost:5000/api/parcelas/listar', {
+        fetch('http://localhost:5001/api/parcelas/listar', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

@@ -66,7 +66,7 @@ class Navigator extends React.Component {
     handleLogoutClick = async () => {
         try {
             // Llamada al backend para cerrar sesión si existe endpoint (opcional)
-            // await fetch('http://localhost:5000/api/auth/logout', { method: 'POST', credentials: 'include' });
+            // await fetch('http://localhost:5001/api/auth/logout', { method: 'POST', credentials: 'include' });
             localStorage.removeItem('token');
             localStorage.removeItem('jwt');
             document.cookie.split(';').forEach(function(c) {
