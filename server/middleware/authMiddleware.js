@@ -1,5 +1,6 @@
 // server/middleware/authMiddleware.js
 const jwt = require('jsonwebtoken');
+const jwtSecret = process.env.JWT_SECRET_KEY || 'super-secret-key-2025';
 
 module.exports = function (req, res, next) {
   const authHeader = req.headers['authorization'];
@@ -8,7 +9,7 @@ module.exports = function (req, res, next) {
     return res.status(401).json({ message: 'No token provided' });
   }
   try {
-    const decoded = jwt.verify(token, 'secret_key');
+    const decoded = jwt.verify(token, jwtSecret);
     req.userId = decoded.userId;
     next();
   } catch (err) {

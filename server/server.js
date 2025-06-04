@@ -1,5 +1,6 @@
 // server/index.js
 
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const authRoutes = require('./routes/authRoutes');  // Ruta de autenticación

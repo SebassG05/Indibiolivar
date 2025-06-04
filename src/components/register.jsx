@@ -89,6 +89,9 @@ class Register extends React.Component {
                     successMessage = 'User Registered Successfully!';
                 } else if (mode === 'login') {
                     successMessage = 'Login Successful!';
+                    if (data.token) {
+                        localStorage.setItem('token', data.token); // Save token for session persistence
+                    }
                 } else if (mode === 'forgotPassword') {
                     successMessage = 'Password updated successfully!';
                 }

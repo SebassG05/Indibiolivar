@@ -74,7 +74,8 @@ exports.loginUser = async (req, res) => {
     }
   
     // Generar un token JWT
-    const token = jwt.sign({ userId: user._id }, 'secret_key', { expiresIn: '1h' });
+    const jwtSecret = process.env.JWT_SECRET_KEY || 'super-secret-key-2025';
+    const token = jwt.sign({ userId: user._id }, jwtSecret, { expiresIn: '1h' });
     res.status(200).json({ message: 'Inicio de sesión exitoso', token });
 };
 
@@ -123,7 +124,8 @@ exports.googleLogin = async (req, res) => {
     if (process.env.NODE_ENV === 'development' && googleId && email) {
         let user = await User.findOne({ googleId, email });
         if (user) {
-            const appToken = jwt.sign({ userId: user._id }, 'secret_key', { expiresIn: '1h' });
+            const jwtSecret = process.env.JWT_SECRET_KEY || 'super-secret-key-2025';
+            const appToken = jwt.sign({ userId: user._id }, jwtSecret, { expiresIn: '1h' });
             return res.status(200).json({
                 message: 'Google authentication successful (dev bypass)',
                 token: appToken,
@@ -196,7 +198,8 @@ exports.googleLogin = async (req, res) => {
         }
 
         // --- JWT generation for your app's session ---
-        const appToken = jwt.sign({ userId: user._id }, 'secret_key', { expiresIn: '1h' }); // Use your actual secret key
+        const jwtSecret = process.env.JWT_SECRET_KEY || 'super-secret-key-2025';
+        const appToken = jwt.sign({ userId: user._id }, jwtSecret, { expiresIn: '1h' }); // Use your actual secret key
 
         res.status(200).json({
             message: 'Google authentication successful',
@@ -227,7 +230,8 @@ exports.verifyToken = async (req, res) => {
         return res.status(400).json({ valid: false, message: 'No token provided' });
     }
     try {
-        const decoded = jwt.verify(token, 'secret_key');
+        const jwtSecret = process.env.JWT_SECRET_KEY || 'super-secret-key-2025';
+        const decoded = jwt.verify(token, jwtSecret);
         // Puedes buscar el usuario si quieres devolver info extra
         return res.status(200).json({ valid: true, userId: decoded.userId });
     } catch (err) {

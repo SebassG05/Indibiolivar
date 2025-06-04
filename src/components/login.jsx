@@ -184,9 +184,7 @@ class Login extends React.Component {
             const token = response.data.message[1];
             emitter.emit('handleToken', token); // Emitiendo el evento con los datos
 
-            localStorage.removeItem('token'); 
-            localStorage.removeItem('jwt');
-            // Limpiar token anterior
+            // Guardar solo el nuevo token
             localStorage.setItem('token', token);  // Almacenar nuevo token
 
             emitter.emit('showSnackbar', 'success', `User login successfully.`);
