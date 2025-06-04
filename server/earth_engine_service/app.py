@@ -1681,7 +1681,7 @@ def get_spatiotemporal():
             layer_id = 'spatiotemporal_evi_layer'
             min_val = min([d['EVI'] for d in data if d['EVI'] is not None]) if data else 0
             max_val = max([d['EVI'] for d in data if d['EVI'] is not None]) if data else 1
-            output = [map_url, None, layer_id, None, min_val, max_val, data]
+            output = [map_url, None, layer_id, geojson if 'geojson' in locals() else None, min_val, max_val, data]
         # --- Precipitación (CHIRPS) ---
         elif idx == 'Precipitation':
             chirps = ee.ImageCollection("UCSB-CHG/CHIRPS/DAILY").select('precipitation')
@@ -1717,7 +1717,7 @@ def get_spatiotemporal():
             layer_id = 'spatiotemporal_precip_layer'
             min_val = min([d['Precipitation'] for d in data if d['Precipitation'] is not None]) if data else 0
             max_val = max([d['Precipitation'] for d in data if d['Precipitation'] is not None]) if data else 1
-            output = [map_url, None, layer_id, None, min_val, max_val, data]
+            output = [map_url, None, layer_id, geojson if 'geojson' in locals() else None, min_val, max_val, data]
         # --- LST ---
         elif idx == 'LST':
             lst = ee.ImageCollection("MODIS/061/MOD11A2").select('LST_Day_1km')
@@ -1741,7 +1741,7 @@ def get_spatiotemporal():
             layer_id = 'spatiotemporal_lst_layer'
             min_val = min([d['LST'] for d in data if d['LST'] is not None]) if data else 0
             max_val = max([d['LST'] for d in data if d['LST'] is not None]) if data else 1
-            output = [map_url, None, layer_id, None, min_val, max_val, data]
+            output = [map_url, None, layer_id, geojson if 'geojson' in locals() else None, min_val, max_val, data]
         # --- Percent Tree Cover ---
         elif idx == 'Percent_Tree_Cover':
             cover = ee.ImageCollection('MODIS/006/MOD44B').select('Percent_Tree_Cover')
@@ -1763,7 +1763,7 @@ def get_spatiotemporal():
             layer_id = 'spatiotemporal_treecover_layer'
             min_val = min([d['Percent_Tree_Cover'] for d in data if d['Percent_Tree_Cover'] is not None]) if data else 0
             max_val = max([d['Percent_Tree_Cover'] for d in data if d['Percent_Tree_Cover'] is not None]) if data else 1
-            output = [map_url, None, layer_id, None, min_val, max_val, data]
+            output = [map_url, None, layer_id, geojson if 'geojson' in locals() else None, min_val, max_val, data]
         else:
             return jsonify({"error": "Índice no soportado"}), 400
         return jsonify({"success": True, "output": output}), 200
