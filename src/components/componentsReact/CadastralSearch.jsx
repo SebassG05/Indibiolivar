@@ -25,7 +25,7 @@ function CadastralSearch({ onSubmit }) {
         // Combinar todo en el formato correcto con la 'A' en la posición correcta
         const cadastralRef = `${provinciaFormatted}${municipioFormatted}A${poligonoFormatted}${parcelaFormatted}`;
 
-        const apiUrl = `http://localhost:500/cadastral/${cadastralRef}`;
+        const apiUrl = `http://localhost:5002/cadastral/${cadastralRef}`;
         const queryParams = `?recintoNum=${recintoNum}`;
 
         try {
