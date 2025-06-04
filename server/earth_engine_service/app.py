@@ -18,7 +18,12 @@ from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True, origins=["https://gobiolivar.evenor-tech.com", "http://localhost:3001"])
+CORS(app, supports_credentials=True, origins=[
+    "https://gobiolivar.evenor-tech.com",
+    "http://localhost:3001",
+    "http://localhost:3200",
+    "http://localhost:5001"
+])
 # ria = RIA() # Commented out
 
 ee.Authenticate(auth_mode="gcloud")
@@ -1479,7 +1484,7 @@ def spatiotemporal_analysis_v2():
                     'LST': image.reduceRegion(ee.Reducer.firstNonNull(), aoi, 30).get('LST_Day_1km')
                 })).filter(ee.Filter.notNull(['LST']))
                 features = filteredFeaturesLST.getInfo()['features']
-                data = [f['properties'] for f in features]
+                data = [ f['properties'] for f in features]
                 results['LST'] = data
 
             # --- Percent Tree Cover ---
@@ -2289,4 +2294,4 @@ def maxent_species_distribution():
         return jsonify({'error': str(e)}), 500
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=500, debug=True)
+    app.run(host="0.0.0.0", port=5002, debug=True)

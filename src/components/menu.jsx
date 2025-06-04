@@ -110,25 +110,6 @@ class Menu extends React.Component {
 
             },
             {
-
-                name: 'Modelo Rusle',
-
-                icon: <Icon>landslide</Icon>,
-
-                color: "#490EFF",
-
-                callback: () => {
-
-                    emitter.emit('closeAllController');
-
-                    emitter.emit('openRusleController');
-
-                    this.handleClose();
-
-                }
-
-            },   
-            {
                 name: 'Modelos',
                 icon: <Icon>psychology</Icon>,
                 color: "purple darken-1",
@@ -185,23 +166,6 @@ class Menu extends React.Component {
 
                 }
             },
-
-            {
-                name: 'Soil Organic Carbon Predictor',
-                icon: <Icon>science</Icon>,
-                color: "#795548", // brown
-
-                callback: () => {
-
-                    emitter.emit('closeAllController');
-
-                    emitter.emit('openSocController');
-
-                    this.handleClose();
-
-                }
-            },
-
             {
 
                 name: 'Configurador de Capas',
