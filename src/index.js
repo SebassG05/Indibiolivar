@@ -6,7 +6,8 @@ import Router from '@router/router';
 import * as serviceWorker from '@/serviceWorker';
 import { GoogleOAuthProvider } from '@react-oauth/google';
 
-const googleClientId = "333024406750-iqtq85ch9drl7mola42a7192vfcm868d.apps.googleusercontent.com";
+const googleClientId = "976539618110-9rnj67tgib8m78kvp9ghmei2js36184v.apps.googleusercontent.com";
+
 
 const App = () => (
     <Router />

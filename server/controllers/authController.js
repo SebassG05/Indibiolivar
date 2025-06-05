@@ -5,7 +5,7 @@ const jwt = require('jsonwebtoken');
 const { OAuth2Client } = require('google-auth-library'); // Import Google Auth Library
 
 // Initialize Google Auth Client
-const GOOGLE_CLIENT_ID = '333024406750-iqtq85ch9drl7mola42a7192vfcm868d.apps.googleusercontent.com';
+const GOOGLE_CLIENT_ID = '976539618110-9rnj67tgib8m78kvp9ghmei2js36184v.apps.googleusercontent.com';
 const client = new OAuth2Client(GOOGLE_CLIENT_ID);
 
 // Verify Google ID Token function
