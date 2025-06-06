@@ -241,7 +241,7 @@ class Register extends React.Component {
                     >
                         <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 20 }}>
                             <img
-                                src="./static/assets/tepro_.png"
+                                src="./static/assets/indibiolivar.png"
                                 alt="Logo"
                                 style={{ width: '150px', height: 'auto' }} 
                             />
