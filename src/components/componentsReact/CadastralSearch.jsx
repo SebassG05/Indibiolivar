@@ -25,6 +25,7 @@ function CadastralSearch({ onSubmit }) {
         // Combinar todo en el formato correcto con la 'A' en la posición correcta
         const cadastralRef = `${provinciaFormatted}${municipioFormatted}A${poligonoFormatted}${parcelaFormatted}`;
 
+        // Cambiado a puerto 5002 para Flask
         const apiUrl = `http://localhost:5002/cadastral/${cadastralRef}`;
         const queryParams = `?recintoNum=${recintoNum}`;
 
