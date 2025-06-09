@@ -30,7 +30,7 @@ const styles = {
         fontSize: 29
     },
     toolbar:{
-        background: '#89ca92'
+        backgroundImage: 'linear-gradient(to top, #0ba360 0%, #3cba92 100%)'
     }
 };
 

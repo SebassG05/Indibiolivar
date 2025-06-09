@@ -47,8 +47,8 @@ const styles = {
         fontSize: 29,
         color: '#FFFFFF'
     },
-    toolbar:{
-        background: '#89ca92'
+    toolbar: {
+        backgroundImage: 'linear-gradient(to top, #0ba360 0%, #3cba92 100%)'
     }
 };
 
