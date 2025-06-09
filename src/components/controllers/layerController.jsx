@@ -1189,10 +1189,7 @@ class LayerController extends React.Component {
             { key: 'Precipitation', label: 'Precipitation (CHIRPS)' },
             { key: 'LST', label: 'Land Surface Temperature (LST)' },
             { key: 'Percent_Tree_Cover', label: 'Percent Tree Cover (MODIS)' },
-            { key: 'ET', label: 'Evapotranspiration (MODIS ET)' },
-            { key: 'LAI', label: 'Leaf Area Index (Sentinel-2 LAI)' },
-            { key: 'Solar_Irradiance', label: 'Solar Irradiance (ERA5-Land)' },
-            { key: 'NPP8', label: 'NPP-8d Carbon Balance (MODIS)' }
+
         ];
 
         const showSurfaceAnalysis = this.state.activeTool === 'surfaceAnalysis' || this.state.activeTool === 'both';

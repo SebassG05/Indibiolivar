@@ -24,10 +24,6 @@ const indexOptions = [
   { label: 'Precipitation (CHIRPS)', value: 'Precipitation' },
   { label: 'Land Surface Temperature (LST)', value: 'LST' },
   { label: 'Percent Tree Cover (MODIS)', value: 'Percent_Tree_Cover' },
-  { label: 'Evapotranspiration (MODIS ET)', value: 'ET' },
-  { label: 'Leaf Area Index (Sentinel-2 LAI)', value: 'LAI' },
-  { label: 'Solar Irradiance (ERA5-Land)', value: 'Solar_Irradiance' },
-  { label: 'NPP-8d Carbon Balance (MODIS)', value: 'NPP8' }
 ];
 
 const getToday = () => {
