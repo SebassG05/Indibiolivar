@@ -276,10 +276,6 @@ function RusleColorBar({ min, max }) {
                 background: gradient,
                 boxShadow: '0 1px 4px #0002'
             }} />
-            <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, marginTop: 2 }}>
-                <span>Mín: {min}</span>
-                <span>Máx: {max}</span>
-            </div>
         </div>
     );
 }
