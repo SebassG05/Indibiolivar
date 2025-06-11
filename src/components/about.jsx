@@ -59,22 +59,39 @@ class About extends React.Component {
 
     render() {
         return (
-            <div id="about" className="modal">
-                <div className="modal-content">
-                    <h4>About</h4>
-                    <p>
-                    Designed & Written by&nbsp;
-                    <a href="https://evenor-tech.com/">Evenor-Tech</a>.
-                    </p>
-                    <p>
-                        <a style={styles.logoContainer} href="https://www.steambioafrica.com/">
-                        <img style={styles.logo} src="./static/assets/eu.png" alt="" />
+            <div id="about" className="modal" style={{ borderRadius: '16px', boxShadow: '0 8px 32px rgba(60,186,146,0.2)' }}>
+                <div className="modal-content" style={{ padding: '2.5rem 2.5rem 2rem 2.5rem', borderRadius: '16px', background: 'rgba(255,255,255,0.98)', boxShadow: '0 4px 24px rgba(60,186,146,0.10)' }}>
+                    <h4 style={{ color: '#0ba360', fontWeight: 700, fontSize: '2rem', marginBottom: '1.5rem' }}>Sobre la herramienta</h4>
+                    <div style={{ marginBottom: '1.5rem' }}>
+                        <h5 style={{ color: '#3cba92', fontWeight: 600, fontSize: '1.2rem', marginBottom: '0.5rem' }}>Desarrollador principal</h5>
+                        <p style={{ fontSize: '1.08rem', color: '#222', margin: 0 }}><b>Evenor Tech</b></p>
+                    </div>
+                    <div style={{ marginBottom: '1.5rem' }}>
+                        <h5 style={{ color: '#3cba92', fontWeight: 600, fontSize: '1.2rem', marginBottom: '0.5rem' }}>Participantes</h5>
+                        <ul style={{ fontSize: '1.08rem', color: '#222', margin: 0, paddingLeft: '1.2rem', listStyle: 'disc' }}>
+                            <li><b>Javier Bravo Garcia</b></li>
+                            <li><b>Sebastián Gandía Gutiérrez</b></li>
+                            <li><b>Fernando Alonso Mertín</b></li>
+                        </ul>
+                    </div>
+                    <div style={{ marginBottom: '1.5rem' }}>
+                        <h5 style={{ color: '#3cba92', fontWeight: 600, fontSize: '1.2rem', marginBottom: '0.5rem' }}>Créditos</h5>
+                        <p style={{ fontSize: '1rem', color: '#555', margin: 0 }}>
+                            Designed &amp; Written by&nbsp;
+                            <a href="https://evenor-tech.com/" style={{ color: '#0ba360', textDecoration: 'underline' }}>Evenor-Tech</a>.
+                        </p>
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '1 rem', marginTop: '2rem', justifyContent: 'center' }}>
+                        <a style={{ height: '80px', display: 'flex', alignItems: 'center' }} href="https://evenor-tech.com/" target="_blank" rel="noopener noreferrer">
+                            <img style={{ height: '250px', width: 'auto', objectFit: 'contain' }} src="./static/assets/evenor.png" alt="Logo Evenor Tech" />
                         </a>
-                    </p>
-                    
+                        <a style={{ height: '80px', display: 'flex', alignItems: 'center' }} href="https://indibiolivar.com/" target="_blank" rel="noopener noreferrer">
+                            <img style={{ height: '130px', width: 'auto', objectFit: 'contain' }} src="./static/assets/indibiolivar.png" alt="Logo Indibiolivar" />
+                        </a>
+                    </div>
                 </div>
-                <div className="modal-footer">
-                    <button className="modal-close waves-effect waves-light btn-flat">OK</button>
+                <div className="modal-footer" style={{ borderTop: '1px solid #e0e0e0', background: 'rgba(60,186,146,0.07)', borderRadius: '0 0 16px 16px' }}>
+                    <button className="modal-close waves-effect waves-light btn-flat" style={{ color: '#0ba360', fontWeight: 600, fontSize: '1.1rem' }}>OK</button>
                 </div>
             </div>
         );
