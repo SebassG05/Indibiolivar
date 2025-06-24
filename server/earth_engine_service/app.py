@@ -20,9 +20,6 @@ from sklearn.preprocessing import StandardScaler
 app = Flask(__name__)
 CORS(app, supports_credentials=True, origins=[
     "https://gobiolivar.evenor-tech.com",
-    "http://localhost:3001",
-    "http://localhost:3200",
-    "http://localhost:5001",
     "https://indibiolivar.evenor-tech.com",
 ])
 # ria = RIA() # Commented out
@@ -433,9 +430,9 @@ def vegetation_index_change_inspector():
             return srCollection
 
         def getCombinedSRcollection(startYear, endYear, startDay, endDay, aoi):
-            lt5 = getSRcollection(startYear, startDay, endDay, 'LT05', aoi)
-            le7 = getSRcollection(startYear, startDay, endDay, 'LE07', aoi)
-            lc8 = getSRcollection(startYear, startDay, endDay, 'LC08', aoi)
+            lt5 = getSRcollection(startYear, startYear, startDay, endDay, 'LT05', aoi)
+            le7 = getSRcollection(startYear, startYear, startDay, endDay, 'LE07', aoi)
+            lc8 = getSRcollection(startYear, startYear, startDay, endDay, 'LC08', aoi)
             return ee.ImageCollection(lt5.merge(le7).merge(lc8))
         
         def add_indices(image):
