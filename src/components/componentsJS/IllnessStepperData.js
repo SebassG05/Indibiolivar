@@ -54,7 +54,7 @@ export default function IllnessModelStepper() {
 
   const fetchIllnesses = async () => {
     try {
-      const response = await fetch('http://localhost:5002/available_illnesses'); // Endpoint para obtener enfermedades disponibles
+      const response = await fetch('https://indibiolivar.evenor-tech.com/available_illnesses'); // Endpoint para obtener enfermedades disponibles
       const data = await response.json();
       setAvailableIllnesses(data.illnesses || []);
     } catch (error) {
@@ -64,7 +64,7 @@ export default function IllnessModelStepper() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch('http://localhost:5002/illness_model', {
+      const response = await fetch('https://indibiolivar.evenor-tech.com/illness_model', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

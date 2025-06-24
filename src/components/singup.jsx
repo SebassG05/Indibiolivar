@@ -101,7 +101,7 @@ class SignUp extends React.Component {
           };
         // Generate request parameters
         const response = await axios.post(
-            "http://localhost:9000/api/v1/users",
+            "https://indibiolivar.evenor-tech.com/api/v1/users",
             newUser
           );
 

@@ -201,7 +201,7 @@ function ParcelDropdown({ onSelect }) {
     const [selected, setSelected] = useState('');
     useEffect(() => {
         const token = localStorage.getItem('token');
-        fetch('http://localhost:5001/api/parcelas/listar', {
+        fetch('https://indibiolivar.evenor-tech.com/api/parcelas/listar', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

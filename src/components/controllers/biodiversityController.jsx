@@ -569,7 +569,7 @@ class BiodiversityController extends React.Component {
                         variant="contained"
                         color="primary"
                         style={styles.button}
-                        onClick={() => this.handleCalculate('http://localhost:5003/api/shannon', 'shannonIndex')}
+                        onClick={() => this.handleCalculate('https://indibiolivar.evenor-tech.com/api/shannon', 'shannonIndex')}
                         disabled={loading}
                     >
                         Calcular Índice Shannon
@@ -596,7 +596,7 @@ class BiodiversityController extends React.Component {
                         variant="contained"
                         color="primary"
                         style={styles.button}
-                        onClick={() => this.handleCalculate('http://localhost:5003/api/chao1', 'chao1Index')}
+                        onClick={() => this.handleCalculate('https://indibiolivar.evenor-tech.com/api/chao1', 'chao1Index')}
                         disabled={loading}
                     >
                         Calcular Índice Chao1
@@ -623,7 +623,7 @@ class BiodiversityController extends React.Component {
                         variant="contained"
                         color="primary"
                         style={styles.button}
-                        onClick={() => this.handleCalculate('http://localhost:5003/api/chao2', 'chao2Index')}
+                        onClick={() => this.handleCalculate('https://indibiolivar.evenor-tech.com/api/chao2', 'chao2Index')}
                         disabled={loading}
                     >
                         Calcular Índice Chao2

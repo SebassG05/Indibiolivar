@@ -22,7 +22,8 @@ CORS(app, supports_credentials=True, origins=[
     "https://gobiolivar.evenor-tech.com",
     "http://localhost:3001",
     "http://localhost:3200",
-    "http://localhost:5001"
+    "http://localhost:5001",
+    "https://indibiolivar.evenor-tech.com",
 ])
 # ria = RIA() # Commented out
 
