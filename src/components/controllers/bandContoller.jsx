@@ -321,7 +321,7 @@ class BandController extends React.Component {
         console.log('Datos enviados al backend:', data);
         // Si el Stepper envía un FormData directamente (nuevo flujo)
         if (data[0] instanceof FormData) {
-            fetch('https://indibiolivar.evenor-tech.com/get_image', {
+            fetch('/get_image', {
                 method: 'POST',
                 body: data[0]
             })
@@ -364,7 +364,7 @@ class BandController extends React.Component {
             formData.append('endDate', data[0].endDate);
             formData.append('indexType', data[0].indexType);
             formData.append('aoiDataFiles', data[0].aoiDataFiles[0]);
-            fetch('https://indibiolivar.evenor-tech.com/get_image', {
+            fetch('/get_image', {
                 method: 'POST',
                 body: formData
             })

@@ -130,7 +130,7 @@ export default function HorizontalLinearStepperData({ onSubmit }) {
       }
 
       try {
-        const response = await fetch('https://indibiolivar.evenor-tech.com/get_spatiotemporal', {
+        const response = await fetch('/get_spatiotemporal', {
           method: 'POST',
           body: formData
         });

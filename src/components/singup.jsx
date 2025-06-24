@@ -101,7 +101,7 @@ class SignUp extends React.Component {
           };
         // Generate request parameters
         const response = await axios.post(
-            "https://indibiolivar.evenor-tech.com/api/v1/users",
+            "/api/v1/users",
             newUser
           );
 

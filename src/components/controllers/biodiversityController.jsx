@@ -546,8 +546,13 @@ class BiodiversityController extends React.Component {
     handleCalculate = async (endpoint, resultKey) => {
         this.setState({ error: null, loading: true });
 
+        // For endpoints of this app, use relative URLs
+        let url = endpoint;
+        if (endpoint.startsWith('https://indibiolivar.evenor-tech.com')) {
+            url = endpoint.replace('https://indibiolivar.evenor-tech.com', '');
+        }
         try {
-            const response = await fetch(endpoint);
+            const response = await fetch(url);
             if (!response.ok) throw new Error('Error al procesar la solicitud');
             const data = await response.json();
             this.setState({ [resultKey]: data });

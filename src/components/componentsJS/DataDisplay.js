@@ -46,7 +46,7 @@ function DataDisplay({ data, onBack, onSaveShape, saving }) {
                 vuelo: data.vuelo
             };
             const token = localStorage.getItem('token');
-            const response = await fetch('https://indibiolivar.evenor-tech.com/api/parcelas/guardar', {
+            const response = await fetch('/api/parcelas/guardar', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
                 body: JSON.stringify(payload)

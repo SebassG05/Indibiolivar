@@ -62,13 +62,13 @@ class Register extends React.Component {
         let body = {};
 
         if (mode === 'register') {
-            url = 'https://indibiolivar.evenor-tech.com/api/auth/register';
+            url = '/api/auth/register';
             body = JSON.stringify({ username, email, password });
         } else if (mode === 'login') {
-            url = 'https://indibiolivar.evenor-tech.com/api/auth/login';
+            url = '/api/auth/login';
             body = JSON.stringify({ username, password });
         } else if (mode === 'forgotPassword') {
-            url = 'https://indibiolivar.evenor-tech.com/api/auth/reset-password'; // New endpoint
+            url = '/api/auth/reset-password'; // New endpoint
             body = JSON.stringify({ username, newPassword }); // Send username and new password
         }
 
@@ -156,7 +156,7 @@ class Register extends React.Component {
         this.setState({ isSubmitting: true });
 
         try {
-            const backendResponse = await fetch('https://indibiolivar.evenor-tech.com/api/auth/google', {
+            const backendResponse = await fetch('/api/auth/google', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

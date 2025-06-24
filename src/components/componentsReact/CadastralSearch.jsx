@@ -26,7 +26,7 @@ function CadastralSearch({ onSubmit }) {
         const cadastralRef = `${provinciaFormatted}${municipioFormatted}A${poligonoFormatted}${parcelaFormatted}`;
 
         // Cambiado a puerto 5002 para Flask
-        const apiUrl = `https://indibiolivar.evenor-tech.com/cadastral/${cadastralRef}`;
+        const apiUrl = `/cadastral/${cadastralRef}`;
         const queryParams = `?recintoNum=${recintoNum}`;
 
         try {

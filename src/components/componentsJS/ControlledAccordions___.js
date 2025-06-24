@@ -298,7 +298,7 @@ export default function ControlledAccordions({onSubmit}) {
       
       console.log(data);
       console.log("Aqi")
-      const response = await fetch('https://indibiolivar.evenor-tech.com/api/soil_organic_prediction', {
+      const response = await fetch('/api/soil_organic_prediction', {
          method: 'POST',
          body: data
       });

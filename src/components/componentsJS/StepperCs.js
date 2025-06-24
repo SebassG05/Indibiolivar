@@ -53,7 +53,7 @@ export default function HorizontalLinearStepperCS({onSubmit}) {
   const handleSubmit = async () => {
       setLoading(true);
       const ref = cadastralRef.replace(/\s/g, '');
-      const apiUrl = `https://indibiolivar.evenor-tech.com/cadastral/${ref}`;
+      const apiUrl = `/cadastral/${ref}`;
       const queryParams = `?recintoNum=${recintoNum}`;
       try {
           const response = await fetch(`${apiUrl}${queryParams}`);

@@ -18,7 +18,7 @@ import emitter from '@utils/events.utils';
 import axios from "axios";
 
 
-axios.defaults.baseURL = 'https://indibiolivar.evenor-tech.com';
+axios.defaults.baseURL = '';
 axios.defaults.withCredentials = true; // Importante para enviar cookies
 
 const theme = createTheme({
@@ -31,7 +31,7 @@ const theme = createTheme({
 
 const catastralList = ["41046A010000100000DU","41041A014001860000HF","41041A014001790000HQ", "41041A015002920000HF", "41041A015002760000HH", "41041A015002730000HS", "41041A014000920000HF", "41041A007003790000HK", "41041A005000430000HO"];
 
-const apiUrl = 'https://indibiolivar.evenor-tech.com';
+const apiUrl = '';
 
 
 axios.interceptors.request.use(
@@ -135,7 +135,7 @@ class Login extends React.Component {
 
     getUserParcels = async (userId) => {
         try {
-            const response = await axios.get(`https://indibiolivar.evenor-tech.com/users/${userId}/parcels`);
+            const response = await axios.get(`/users/${userId}/parcels`);
             if (response.status === 200) {
                 this.updateDatasetUtilsFile(response.data);
                 console.log("Parcelas recibidas:", response.data);
@@ -174,7 +174,7 @@ class Login extends React.Component {
           };
         // Generate request parameters
         const response = await axios.post(
-            "https://indibiolivar.evenor-tech.com/login",
+            "/login",
             newUser
           );
 

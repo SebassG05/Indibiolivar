@@ -69,7 +69,7 @@ const MyComponent = () => {
         };
 
         try {
-            const response = await fetch('https://indibiolivar.evenor-tech.com/predict', {
+            const response = await fetch('/predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

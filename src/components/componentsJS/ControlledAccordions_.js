@@ -176,7 +176,7 @@ const ControlledAccordions = forwardRef(function ControlledAccordions({ onSubmit
       console.log('indexType:', formData.indexType);
       console.log('aoiDataFiles:', formData.aoiDataFiles);
 
-      const apiUrl = 'https://indibiolivar.evenor-tech.com/api/vegetation_index_change_inspector'; // Use local server
+      const apiUrl = '/api/vegetation_index_change_inspector'; // Use local server
       console.log('Calling API:', apiUrl);
       const response = await fetch(apiUrl, {
         method: 'POST',

@@ -49,7 +49,7 @@ export default function HorizontalLinearStepperImport({ onSubmit }) {
 
   const fetchTables = async () => {
     try {
-      const response = await fetch('https://indibiolivar.evenor-tech.com/api/tables'); // Endpoint para obtener enfermedades disponibles
+      const response = await fetch('/api/tables'); // Endpoint para obtener enfermedades disponibles
       const data = await response.json();
       setTables(data);
 
@@ -70,7 +70,7 @@ export default function HorizontalLinearStepperImport({ onSubmit }) {
     formData.append('file', file);
     formData.append('table', selectedTable);
 
-    axios.post('https://indibiolivar.evenor-tech.com/api/upload', formData, {
+    axios.post('/api/upload', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

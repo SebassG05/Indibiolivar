@@ -68,7 +68,7 @@ const MaxentController = () => {
     setResult(null);
     setImportance(null);
     try {
-      const response = await fetch('https://indibiolivar.evenor-tech.com/api/maxent/distribution', {
+      const response = await fetch('/api/maxent/distribution', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
