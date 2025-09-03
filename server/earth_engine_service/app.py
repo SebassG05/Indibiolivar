@@ -1601,7 +1601,7 @@ def spatiotemporal_analysis_v2():
                             'NPP8': img.reduceRegion(ee.Reducer.mean(), aoi, 500).get('NPP8')
                         })).filter(ee.Filter.notNull(['NPP8']))
                 results['NPP8'] = [f['properties'] for f in feats.getInfo()['features']]
-            return jsonify({"success": True, "results": results, "geojson": geojson_dict}), 200
+            return jsonify({"success": True, "output": results, "geojson": geojson_dict}), 200
     except Exception as e:
         print(str(e))
         return jsonify({"error": str(e)}), 500
