@@ -362,7 +362,7 @@ class Register extends React.Component {
                             <>
                                 <TextField
                                     name="username"
-                                    label="usuario"
+                                    label="Usuario"
                                     value={this.state.username}
                                     fullWidth
                                     margin="dense"
@@ -371,7 +371,7 @@ class Register extends React.Component {
                                 />
                                 <TextField
                                     name="password"
-                                    label="contraseña"
+                                    label="Contraseña"
                                     type="password"
                                     value={this.state.password}
                                     fullWidth
@@ -388,7 +388,7 @@ class Register extends React.Component {
                                             fontSize: '14px',
                                         }}
                                     >
-                                        Has olvidado tu contraseña?
+                                        ¿Has olvidado tu contraseña?
                                     </span>
                                 </div>
                                 <Button
@@ -483,7 +483,7 @@ class Register extends React.Component {
                                 {this.state.mode === 'login' && (
                                     <div style={{ marginTop: 20, textAlign: 'center' }}>
                                         <span style={{ fontSize: '14px', color: '#888' }}>
-                                            No tienes una cuenta?{' '}
+                                            ¿No tienes una cuenta?{' '}
                                             <span
                                                 onClick={() => this.toggleMode('register')}
                                                 style={{
