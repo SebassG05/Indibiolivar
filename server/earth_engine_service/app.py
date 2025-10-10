@@ -26,11 +26,8 @@ CORS(app, supports_credentials=True, origins=[
 ])
 # ria = RIA() # Commented out
 
-# Initialize Earth Engine with service account
-service_account = 'evenor-tech@soil-values-predictor.iam.gserviceaccount.com'
-credentials_path = os.path.join(os.path.dirname(__file__), 'soil-values-predictor-94b681b7d4af.json')
-credentials = ee.ServiceAccountCredentials(service_account, credentials_path)
-ee.Initialize(credentials)
+ee.Authenticate(auth_mode="gcloud")
+ee.Initialize(project='soil-values-predictor')
 
 @app.route('/api/', methods=['GET'])
 def index():
