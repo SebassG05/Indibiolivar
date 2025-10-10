@@ -156,7 +156,7 @@ class Register extends React.Component {
         this.setState({ isSubmitting: true });
 
         try {
-            const backendResponse = await fetch('/api/auth/google', {
+            const backendResponse = await fetch('http://localhost:5001/api/auth/google', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
